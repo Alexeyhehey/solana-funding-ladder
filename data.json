@@ -1,0 +1,167 @@
+{
+  "title": "The Solana Funding Ladder",
+  "checkedOn": "2026-11-15",
+  "source": "https://funding-ladder-v3.vercel.app",
+  "rungs": [
+    {
+      "level": 0,
+      "title": "Paid bounties",
+      "kind": "non-dilutive",
+      "amount": "Varies by listing",
+      "proof": "Time to finish a discrete task and build public proof of work.",
+      "programs": [
+        {
+          "name": "Superteam Earn",
+          "amount": "Stablecoin bounties; prize pools vary by listing",
+          "terms": "Competitive: selected submissions win, finishing does not guarantee a payout. Keep 100% of your company.",
+          "deadline": "Varies by listing",
+          "action": "Find bounties",
+          "url": "https://superteam.fun/earn"
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "title": "Instagrants",
+      "kind": "non-dilutive",
+      "amount": "Up to 10,000 USDG",
+      "proof": "A repo, demo or past bounty wins, plus one milestone you can ship.",
+      "notice": "“Applications Paused” on the listing as of 15 Nov 2026. Check with @SuperteamUKR before applying.",
+      "programs": [
+        {
+          "name": "Solana Foundation Ukraine Grants",
+          "amount": "Up to 10,000 USDG",
+          "terms": "For people in Ukraine. Confirm rights in the grant agreement. 25% upfront, the rest against milestones. Average initial response around one week.",
+          "deadline": "Availability unconfirmed",
+          "action": "Check before applying",
+          "url": "https://superteam.fun/earn/grants/solana-foundation-ukraine-grants"
+        },
+        {
+          "name": "Solana Mobile Builder Grants",
+          "amount": "Not published",
+          "terms": "Milestone funding for mobile builders; may include co-marketing and launch support.",
+          "deadline": "Rolling",
+          "action": "Apply",
+          "url": "https://solanamobile.com/grants"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "Foundation grants",
+      "kind": "non-dilutive",
+      "amount": "Typical size unpublished",
+      "proof": "An open-source Solana public good and a clear plan for the funds.",
+      "programs": [
+        {
+          "name": "Solana Foundation",
+          "amount": "Typical grant size not published",
+          "terms": "Milestone grants, convertible grants and RFPs. First review about one week, decision about three weeks. Commercial projects may need a convertible grant.",
+          "deadline": "Rolling",
+          "action": "Apply",
+          "url": "https://solana.org/grants"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "title": "Hackathons",
+      "kind": "non-dilutive",
+      "amount": "$10,000–$30,000",
+      "proof": "A working product and a pitch video.",
+      "programs": [
+        {
+          "name": "Colosseum Frontier",
+          "amount": "$30,000 grand prize, $10,000 other awards",
+          "terms": "Past Solana hackathon. Winners can interview for Colosseum’s accelerator.",
+          "deadline": "Closed 11 May 2026 (historical)",
+          "action": "See past event",
+          "url": "https://blog.colosseum.com/announcing-the-solana-frontier-hackathon"
+        },
+        {
+          "name": "Colosseum Eternal",
+          "amount": "$25,000 non-dilutive award per round",
+          "terms": "Four-week sprint with weekly updates. The Eternal Award is for startups that have not raised venture capital.",
+          "deadline": "Start by 20 Mar 2027",
+          "action": "Start a sprint",
+          "url": "https://colosseum.com/eternal"
+        },
+        {
+          "name": "Superteam Ukraine",
+          "amount": "Up to $10,000 in local track prizes",
+          "terms": "Free Solana Startup Terminal course for teams preparing for Colosseum; check the current intake.",
+          "deadline": "Not specified in the source",
+          "action": "Explore the local route",
+          "url": "https://ua.superteam.fun"
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "title": "Accelerators",
+      "kind": "priced",
+      "amount": "$250,000–$800,000",
+      "proof": "A hackathon win or strong early traction, depending on the programme.",
+      "programs": [
+        {
+          "name": "Colosseum Accelerator",
+          "amount": "$250,000 on acceptance",
+          "terms": "SAFE and token warrant, or STAMP for teams tokenizing through MetaDAO. Includes in-person attendance. Enter through a hackathon win or Eternal.",
+          "deadline": "Depends on the qualifying event",
+          "action": "See entry requirements",
+          "url": "https://colosseum.com/accelerator"
+        },
+        {
+          "name": "Alliance",
+          "amount": "$400,000 on admission, plus $400,000 follow-on at seed",
+          "terms": "$4M post-money valuation at admission, on a SAFE with a 1:1 token side letter.",
+          "deadline": "Regular admission closes 18 Nov 2026",
+          "action": "Apply",
+          "url": "https://alliance.xyz/apply"
+        },
+        {
+          "name": "Solana Incubator",
+          "amount": "Not published",
+          "terms": "Build alongside Solana Labs in New York, with technical and fundraising support and a relocation stipend.",
+          "deadline": "Early applications close 4 Dec 2026",
+          "action": "Apply",
+          "url": "https://incubator.solanalabs.com/"
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "title": "Venture rounds",
+      "kind": "priced",
+      "amount": "$2.25M–$11.25M in cited rounds",
+      "proof": "Users or revenue an investor can verify in a data room.",
+      "programs": [
+        {
+          "name": "Solana venture investors",
+          "amount": "Raiku: $2.25M pre-seed, $11.25M seed. Exponent: $5M seed.",
+          "terms": "Instruments vary by deal; check each announcement. Expect to discuss both equity and token rights.",
+          "deadline": "No common deadline",
+          "action": "Explore the Colosseum route",
+          "url": "https://blog.colosseum.com/expanding-the-arena"
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "title": "On-chain raises",
+      "kind": "governed",
+      "amount": "$3M raised in the Umbra case",
+      "proof": "A live product and a community that already wants the token.",
+      "programs": [
+        {
+          "name": "MetaDAO launches",
+          "amount": "Founder sets the minimum and cap. Umbra raised $3M (per its MetaDAO page).",
+          "terms": "Buyers have four days to commit USDC. Accepted funds enter a market-governed treasury. Founder spending and token unlocks follow the sale rules.",
+          "deadline": "Set by the launch",
+          "action": "Read launch requirements",
+          "url": "https://docs.metadao.fi/how-launches-work/create"
+        }
+      ]
+    }
+  ]
+}

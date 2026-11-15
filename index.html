@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Seven ways to fund a Solana project, from paid bounties to an on-chain raise. Compare amounts, terms, deadlines and the proof each route asks for.">
+  <meta name="color-scheme" content="dark">
+  <title>The Solana Funding Ladder</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1019;
+      --panel: #151928;
+      --text: #f1f3fa;
+      --muted: #b1bad2;
+      --line: #343d55;
+      --green: #57eeb2;
+      --gold: #ffc070;
+      --purple: #c5a3ff;
+      font: 100%/1.55 system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:hover { text-decoration-thickness: .15em; }
+    :focus-visible { outline: 2px solid var(--text); outline-offset: 4px; border-radius: 2px; }
+    .wrap { width: min(100% - 2rem, 70rem); margin-inline: auto; }
+    .masthead { border-bottom: 1px solid var(--line); }
+    .masthead .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; padding-block: .9rem; }
+    .edition, .as-of, .kind, dt, .legend { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; }
+    .edition, .as-of { margin: 0; font-size: .78rem; }
+    .edition { color: var(--green); font-weight: 700; letter-spacing: .09em; }
+    .as-of { color: var(--muted); }
+    .intro { padding-block: clamp(2.75rem, 8vw, 6rem) 2rem; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { max-width: 12ch; font-size: clamp(2.7rem, 8vw, 6.25rem); line-height: .94; letter-spacing: -.065em; }
+    .intro p { max-width: 55ch; margin-top: 1.35rem; color: var(--muted); font-size: clamp(1rem, 2.2vw, 1.25rem); }
+    .legend { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin: 0 0 2rem; padding: 0; list-style: none; font-size: .8rem; }
+    .legend li::before { content: ""; display: inline-block; width: .6em; height: .6em; margin-right: .65em; background: var(--accent); border-radius: 2px; }
+    .non-dilutive { --accent: var(--green); }
+    .priced { --accent: var(--gold); }
+    .governed { --accent: var(--purple); }
+    .ladder { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+    .rung { display: grid; grid-template-columns: 3fr 4fr; gap: 1.15rem 2rem; min-width: 0; padding: 1.3rem 1.5rem; background: var(--panel); border-left: 4px solid var(--accent); border-radius: .75rem; }
+    .rung-heading { display: flex; gap: 1rem; align-items: baseline; }
+    .rung-number { color: var(--accent); font: 700 1rem/1 ui-monospace, "Cascadia Mono", Consolas, monospace; }
+    h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); line-height: 1.16; letter-spacing: -.035em; }
+    .kind { margin-top: .35rem; color: var(--muted); font-size: .78rem; }
+    .rung-proof { color: var(--muted); }
+    .amount { margin-bottom: .15rem; color: var(--accent); font-size: 1.2rem; font-weight: 750; line-height: 1.3; }
+    .notice { grid-column: 1 / -1; background: #2c231c; border-left: 3px solid var(--gold); padding: .65rem .8rem; color: #ffe0bd; font-size: .92rem; }
+    .programmes { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; list-style: none; margin: 0; padding: 1rem 0 0; border-top: 1px solid var(--line); }
+    .programme { display: flex; flex-direction: column; align-items: flex-start; }
+    h3 { font-size: 1rem; }
+    dl { display: grid; gap: .55rem; margin: .6rem 0 .4rem; }
+    dt { color: var(--muted); font-size: .73rem; text-transform: uppercase; letter-spacing: .045em; }
+    dd { margin: 0; font-size: .91rem; overflow-wrap: anywhere; }
+    .programme a { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; margin-top: auto; color: var(--accent); font-size: .88rem; font-weight: 690; }
+    footer { display: grid; gap: .55rem; margin-block: 2.25rem; color: var(--muted); font-size: .87rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    @media (max-width: 38rem) {
+      .rung { grid-template-columns: minmax(0, 1fr); padding: 1rem; gap: .85rem; }
+      .rung-heading { gap: .65rem; }
+      .programmes { grid-template-columns: minmax(0, 1fr); }
+      .programme + .programme { border-top: 1px solid var(--line); padding-top: .9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead"><p style="margin:0 0 12px;font-size:14px"><a href="index.html">EN</a> · <a href="uk.html">UA</a></p>
+    <div class="wrap">
+      <p class="edition">SOLANA / FOUNDER FIELD GUIDE</p>
+      <p class="as-of">Sources checked <time datetime="2026-11-15">15 Nov 2026</time></p>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="intro">
+      <h1>The Solana Funding Ladder</h1>
+      <p>Pick the rung that fits the proof you have today. Compare how much you can raise, what each route asks of you, and where to start.</p>
+    </div>
+    <ul class="legend" aria-label="Funding terms">
+      <li class="non-dilutive">Non-dilutive¹</li>
+      <li class="priced">Equity or token rights</li>
+      <li class="governed">Market-governed</li>
+    </ul>
+    <ol class="ladder" aria-label="Funding ladder, from bounty to on-chain raise" start="0">
+      <li class="rung non-dilutive" id="rung-0">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 0">00</span>
+          <div><h2>Paid bounties</h2><p class="kind">Non-dilutive¹</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">Varies by listing</p><p>Time to finish a discrete task and build public proof of work.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Superteam Earn</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>Stablecoin bounties; prize pools vary by listing</dd></div>
+              <div><dt>Terms</dt><dd>Competitive: selected submissions win, finishing does not guarantee a payout. Keep 100% of your company.</dd></div>
+              <div><dt>Deadline</dt><dd>Varies by listing</dd></div>
+            </dl>
+            <a href="https://superteam.fun/earn">Find bounties <span aria-hidden="true">↗</span><span class="sr-only">: Superteam Earn</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung non-dilutive" id="rung-1">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 1">01</span>
+          <div><h2>Instagrants</h2><p class="kind">Non-dilutive¹</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">Up to 10,000 USDG</p><p>A repo, demo or past bounty wins, plus one milestone you can ship.</p></div>
+        <p class="notice">“Applications Paused” on the listing as of 15 Nov 2026. Check with @SuperteamUKR before applying.</p>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Solana Foundation Ukraine Grants</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>Up to 10,000 USDG</dd></div>
+              <div><dt>Terms</dt><dd>For people in Ukraine. Confirm rights in the grant agreement. 25% upfront, the rest against milestones. Average initial response around one week.</dd></div>
+              <div><dt>Deadline</dt><dd>Availability unconfirmed</dd></div>
+            </dl>
+            <a href="https://superteam.fun/earn/grants/solana-foundation-ukraine-grants">Check before applying <span aria-hidden="true">↗</span><span class="sr-only">: Solana Foundation Ukraine Grants</span></a>
+          </li>
+          <li class="programme">
+            <h3>Solana Mobile Builder Grants</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>Not published</dd></div>
+              <div><dt>Terms</dt><dd>Milestone funding for mobile builders; may include co-marketing and launch support.</dd></div>
+              <div><dt>Deadline</dt><dd>Rolling</dd></div>
+            </dl>
+            <a href="https://solanamobile.com/grants">Apply <span aria-hidden="true">↗</span><span class="sr-only">: Solana Mobile Builder Grants</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung non-dilutive" id="rung-2">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 2">02</span>
+          <div><h2>Foundation grants</h2><p class="kind">Non-dilutive¹</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">Typical size unpublished</p><p>An open-source Solana public good and a clear plan for the funds.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Solana Foundation</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>Typical grant size not published</dd></div>
+              <div><dt>Terms</dt><dd>Milestone grants, convertible grants and RFPs. First review about one week, decision about three weeks. Commercial projects may need a convertible grant.</dd></div>
+              <div><dt>Deadline</dt><dd>Rolling</dd></div>
+            </dl>
+            <a href="https://solana.org/grants">Apply <span aria-hidden="true">↗</span><span class="sr-only">: Solana Foundation</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung non-dilutive" id="rung-3">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 3">03</span>
+          <div><h2>Hackathons</h2><p class="kind">Non-dilutive¹</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">$10,000–$30,000</p><p>A working product and a pitch video.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Colosseum Frontier</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>$30,000 grand prize, $10,000 other awards</dd></div>
+              <div><dt>Terms</dt><dd>Past Solana hackathon. Winners can interview for Colosseum’s accelerator.</dd></div>
+              <div><dt>Deadline</dt><dd>Closed 11 May 2026 (historical)</dd></div>
+            </dl>
+            <a href="https://blog.colosseum.com/announcing-the-solana-frontier-hackathon">See past event <span aria-hidden="true">↗</span><span class="sr-only">: Colosseum Frontier</span></a>
+          </li>
+          <li class="programme">
+            <h3>Colosseum Eternal</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>$25,000 non-dilutive award per round</dd></div>
+              <div><dt>Terms</dt><dd>Four-week sprint with weekly updates. The Eternal Award is for startups that have not raised venture capital.</dd></div>
+              <div><dt>Deadline</dt><dd>Start by 20 Mar 2027</dd></div>
+            </dl>
+            <a href="https://colosseum.com/eternal">Start a sprint <span aria-hidden="true">↗</span><span class="sr-only">: Colosseum Eternal</span></a>
+          </li>
+          <li class="programme">
+            <h3>Superteam Ukraine</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>Up to $10,000 in local track prizes</dd></div>
+              <div><dt>Terms</dt><dd>Free Solana Startup Terminal course for teams preparing for Colosseum; check the current intake.</dd></div>
+              <div><dt>Deadline</dt><dd>Not specified in the source</dd></div>
+            </dl>
+            <a href="https://ua.superteam.fun">Explore the local route <span aria-hidden="true">↗</span><span class="sr-only">: Superteam Ukraine</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung priced" id="rung-4">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 4">04</span>
+          <div><h2>Accelerators</h2><p class="kind">Equity or token rights</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">$250,000–$800,000</p><p>A hackathon win or strong early traction, depending on the programme.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Colosseum Accelerator</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>$250,000 on acceptance</dd></div>
+              <div><dt>Terms</dt><dd>SAFE and token warrant, or STAMP for teams tokenizing through MetaDAO. Includes in-person attendance. Enter through a hackathon win or Eternal.</dd></div>
+              <div><dt>Deadline</dt><dd>Depends on the qualifying event</dd></div>
+            </dl>
+            <a href="https://colosseum.com/accelerator">See entry requirements <span aria-hidden="true">↗</span><span class="sr-only">: Colosseum Accelerator</span></a>
+          </li>
+          <li class="programme">
+            <h3>Alliance</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>$400,000 on admission, plus $400,000 follow-on at seed</dd></div>
+              <div><dt>Terms</dt><dd>$4M post-money valuation at admission, on a SAFE with a 1:1 token side letter.</dd></div>
+              <div><dt>Deadline</dt><dd>Regular admission closes 18 Nov 2026</dd></div>
+            </dl>
+            <a href="https://alliance.xyz/apply">Apply <span aria-hidden="true">↗</span><span class="sr-only">: Alliance</span></a>
+          </li>
+          <li class="programme">
+            <h3>Solana Incubator</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>Not published</dd></div>
+              <div><dt>Terms</dt><dd>Build alongside Solana Labs in New York, with technical and fundraising support and a relocation stipend.</dd></div>
+              <div><dt>Deadline</dt><dd>Early applications close 4 Dec 2026</dd></div>
+            </dl>
+            <a href="https://incubator.solanalabs.com/">Apply <span aria-hidden="true">↗</span><span class="sr-only">: Solana Incubator</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung priced" id="rung-5">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 5">05</span>
+          <div><h2>Venture rounds</h2><p class="kind">Equity or token rights</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">$2.25M–$11.25M in cited rounds</p><p>Users or revenue an investor can verify in a data room.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Solana venture investors</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>Raiku: $2.25M pre-seed, $11.25M seed. Exponent: $5M seed.</dd></div>
+              <div><dt>Terms</dt><dd>Instruments vary by deal; check each announcement. Expect to discuss both equity and token rights.</dd></div>
+              <div><dt>Deadline</dt><dd>No common deadline</dd></div>
+            </dl>
+            <a href="https://blog.colosseum.com/expanding-the-arena">Explore the Colosseum route <span aria-hidden="true">↗</span><span class="sr-only">: Solana venture investors</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung governed" id="rung-6">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 6">06</span>
+          <div><h2>On-chain raises</h2><p class="kind">Market-governed</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">$3M raised in the Umbra case</p><p>A live product and a community that already wants the token.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>MetaDAO launches</h3>
+            <dl>
+              <div><dt>Amount</dt><dd>Founder sets the minimum and cap. Umbra raised $3M (per its MetaDAO page).</dd></div>
+              <div><dt>Terms</dt><dd>Buyers have four days to commit USDC. Accepted funds enter a market-governed treasury. Founder spending and token unlocks follow the sale rules.</dd></div>
+              <div><dt>Deadline</dt><dd>Set by the launch</dd></div>
+            </dl>
+            <a href="https://docs.metadao.fi/how-launches-work/create">Read launch requirements <span aria-hidden="true">↗</span><span class="sr-only">: MetaDAO launches</span></a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <footer>
+      <p>¹ Standard grants, bounties and prizes are non-dilutive. A convertible grant may become an investment if agreed conditions are met.</p>
+      <p>Amounts and dates are a snapshot from the source article. Check programme pages for current terms before you apply.</p>
+      <p><a href="data.json">Download the data as JSON</a></p>
+    </footer>
+  </main>
+</body>
+</html>

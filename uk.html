@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Seven ways to fund a Solana project, from paid bounties to an on-chain raise. Compare amounts, terms, deadlines and the proof each route asks for.">
+  <meta name="color-scheme" content="dark">
+  <title>Драбина фінансування Solana</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1019;
+      --panel: #151928;
+      --text: #f1f3fa;
+      --muted: #b1bad2;
+      --line: #343d55;
+      --green: #57eeb2;
+      --gold: #ffc070;
+      --purple: #c5a3ff;
+      font: 100%/1.55 system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:hover { text-decoration-thickness: .15em; }
+    :focus-visible { outline: 2px solid var(--text); outline-offset: 4px; border-radius: 2px; }
+    .wrap { width: min(100% - 2rem, 70rem); margin-inline: auto; }
+    .masthead { border-bottom: 1px solid var(--line); }
+    .masthead .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem 1rem; padding-block: .9rem; }
+    .edition, .as-of, .kind, dt, .legend { font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; }
+    .edition, .as-of { margin: 0; font-size: .78rem; }
+    .edition { color: var(--green); font-weight: 700; letter-spacing: .09em; }
+    .as-of { color: var(--muted); }
+    .intro { padding-block: clamp(2.75rem, 8vw, 6rem) 2rem; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { max-width: 12ch; font-size: clamp(2.7rem, 8vw, 6.25rem); line-height: .94; letter-spacing: -.065em; }
+    .intro p { max-width: 55ch; margin-top: 1.35rem; color: var(--muted); font-size: clamp(1rem, 2.2vw, 1.25rem); }
+    .legend { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin: 0 0 2rem; padding: 0; list-style: none; font-size: .8rem; }
+    .legend li::before { content: ""; display: inline-block; width: .6em; height: .6em; margin-right: .65em; background: var(--accent); border-radius: 2px; }
+    .non-dilutive { --accent: var(--green); }
+    .priced { --accent: var(--gold); }
+    .governed { --accent: var(--purple); }
+    .ladder { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+    .rung { display: grid; grid-template-columns: 3fr 4fr; gap: 1.15rem 2rem; min-width: 0; padding: 1.3rem 1.5rem; background: var(--panel); border-left: 4px solid var(--accent); border-radius: .75rem; }
+    .rung-heading { display: flex; gap: 1rem; align-items: baseline; }
+    .rung-number { color: var(--accent); font: 700 1rem/1 ui-monospace, "Cascadia Mono", Consolas, monospace; }
+    h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); line-height: 1.16; letter-spacing: -.035em; }
+    .kind { margin-top: .35rem; color: var(--muted); font-size: .78rem; }
+    .rung-proof { color: var(--muted); }
+    .amount { margin-bottom: .15rem; color: var(--accent); font-size: 1.2rem; font-weight: 750; line-height: 1.3; }
+    .notice { grid-column: 1 / -1; background: #2c231c; border-left: 3px solid var(--gold); padding: .65rem .8rem; color: #ffe0bd; font-size: .92rem; }
+    .programmes { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; list-style: none; margin: 0; padding: 1rem 0 0; border-top: 1px solid var(--line); }
+    .programme { display: flex; flex-direction: column; align-items: flex-start; }
+    h3 { font-size: 1rem; }
+    dl { display: grid; gap: .55rem; margin: .6rem 0 .4rem; }
+    dt { color: var(--muted); font-size: .73rem; text-transform: uppercase; letter-spacing: .045em; }
+    dd { margin: 0; font-size: .91rem; overflow-wrap: anywhere; }
+    .programme a { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; margin-top: auto; color: var(--accent); font-size: .88rem; font-weight: 690; }
+    footer { display: grid; gap: .55rem; margin-block: 2.25rem; color: var(--muted); font-size: .87rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    @media (max-width: 38rem) {
+      .rung { grid-template-columns: minmax(0, 1fr); padding: 1rem; gap: .85rem; }
+      .rung-heading { gap: .65rem; }
+      .programmes { grid-template-columns: minmax(0, 1fr); }
+      .programme + .programme { border-top: 1px solid var(--line); padding-top: .9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead"><p style="margin:0 0 12px;font-size:14px"><a href="index.html">EN</a> · <a href="uk.html">UA</a></p>
+    <div class="wrap">
+      <p class="edition">SOLANA / ПУТІВНИК ЗАСНОВНИКА</p>
+      <p class="as-of">Джерела перевірено <time datetime="2026-11-15">15 листопада 2026</time></p>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="intro">
+      <h1>Драбина фінансування Solana</h1>
+      <p>Оберіть щабель під ті докази, які маєте сьогодні. Порівняйте, скільки можна залучити, чого вимагає кожен шлях і з чого почати.</p>
+    </div>
+    <ul class="legend" aria-label="Funding terms">
+      <li class="non-dilutive">Без розмиття частки¹</li>
+      <li class="priced">Частка або права на токени</li>
+      <li class="governed">Керується ринком</li>
+    </ul>
+    <ol class="ladder" aria-label="Funding ladder, from bounty to on-chain raise" start="0">
+      <li class="rung non-dilutive" id="rung-0">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 0">00</span>
+          <div><h2>Оплачувані баунті</h2><p class="kind">Без розмиття частки¹</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">Залежить від оголошення</p><p>Час, щоб виконати окреме завдання і зібрати публічне портфоліо.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Superteam Earn</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>Баунті у стейблкоїнах; призові фонди залежать від оголошення</dd></div>
+              <div><dt>Умови</dt><dd>Конкурс: перемагають відібрані роботи, виконання не гарантує виплати. 100% компанії лишається у вас.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Залежить від оголошення</dd></div>
+            </dl>
+            <a href="https://superteam.fun/earn">Знайти баунті <span aria-hidden="true">↗</span><span class="sr-only">: Superteam Earn</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung non-dilutive" id="rung-1">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 1">01</span>
+          <div><h2>Інстагранти</h2><p class="kind">Без розмиття частки¹</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">До 10 000 USDG</p><p>Репозиторій, демо або попередні перемоги в баунті плюс один етап, який ви можете здати.</p></div>
+        <p class="notice">Станом на 15 листопада 2026 в оголошенні вказано «Applications Paused». Перед подачею уточніть у @SuperteamUKR.</p>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Solana Foundation Ukraine Grants</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>До 10 000 USDG</dd></div>
+              <div><dt>Умови</dt><dd>Для людей в Україні. Права уточніть у грантовій угоді. 25% наперед, решта — за етапами. Перша відповідь у середньому близько тижня.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Доступність не підтверджена</dd></div>
+            </dl>
+            <a href="https://superteam.fun/earn/grants/solana-foundation-ukraine-grants">Уточніть перед подачею <span aria-hidden="true">↗</span><span class="sr-only">: Solana Foundation Ukraine Grants</span></a>
+          </li>
+          <li class="programme">
+            <h3>Solana Mobile Builder Grants</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>Не опубліковано</dd></div>
+              <div><dt>Умови</dt><dd>Фінансування за етапами для мобільних розробників; може включати спільний маркетинг і підтримку запуску.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Постійний прийом</dd></div>
+            </dl>
+            <a href="https://solanamobile.com/grants">Подати заявку <span aria-hidden="true">↗</span><span class="sr-only">: Solana Mobile Builder Grants</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung non-dilutive" id="rung-2">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 2">02</span>
+          <div><h2>Гранти Foundation</h2><p class="kind">Без розмиття частки¹</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">Типовий розмір не опубліковано</p><p>Відкритий суспільно корисний продукт на Solana і чіткий план використання коштів.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Solana Foundation</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>Типовий розмір гранту не опубліковано</dd></div>
+              <div><dt>Умови</dt><dd>Гранти за етапами, конвертовані гранти та RFP. Перший розгляд — близько тижня, рішення — близько трьох тижнів. Комерційним проєктам може знадобитися конвертований грант.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Постійний прийом</dd></div>
+            </dl>
+            <a href="https://solana.org/grants">Подати заявку <span aria-hidden="true">↗</span><span class="sr-only">: Solana Foundation</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung non-dilutive" id="rung-3">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 3">03</span>
+          <div><h2>Хакатони</h2><p class="kind">Без розмиття частки¹</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">$10,000–$30,000</p><p>Робочий продукт і відеопітч.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Colosseum Frontier</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>$30 000 головний приз, $10 000 інші нагороди</dd></div>
+              <div><dt>Умови</dt><dd>Минулий хакатон Solana. Переможці можуть пройти співбесіду в акселератор Colosseum.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Закрито 11 травня 2026 (історичні дані)</dd></div>
+            </dl>
+            <a href="https://blog.colosseum.com/announcing-the-solana-frontier-hackathon">Переглянути минулу подію <span aria-hidden="true">↗</span><span class="sr-only">: Colosseum Frontier</span></a>
+          </li>
+          <li class="programme">
+            <h3>Colosseum Eternal</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>$25 000 нагорода без розмиття частки за раунд</dd></div>
+              <div><dt>Умови</dt><dd>Чотиритижневий спринт зі щотижневими оновленнями. Eternal Award — для стартапів, які не залучали венчурний капітал.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Почати до 20 березня 2027</dd></div>
+            </dl>
+            <a href="https://colosseum.com/eternal">Почати спринт <span aria-hidden="true">↗</span><span class="sr-only">: Colosseum Eternal</span></a>
+          </li>
+          <li class="programme">
+            <h3>Superteam Ukraine</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>До $10 000 призів локального треку</dd></div>
+              <div><dt>Умови</dt><dd>Безкоштовний курс Solana Startup Terminal для команд, що готуються до Colosseum; перевірте поточний набір.</dd></div>
+              <div><dt>Дедлайн</dt><dd>У джерелі не вказано</dd></div>
+            </dl>
+            <a href="https://ua.superteam.fun">Дослідити локальний шлях <span aria-hidden="true">↗</span><span class="sr-only">: Superteam Ukraine</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung priced" id="rung-4">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 4">04</span>
+          <div><h2>Акселератори</h2><p class="kind">Частка або права на токени</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">$250,000–$800,000</p><p>Перемога в хакатоні або сильна рання тракція — залежно від програми.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Colosseum Accelerator</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>$250 000 після прийняття</dd></div>
+              <div><dt>Умови</dt><dd>SAFE і токен-варант або STAMP для команд, що токенізуються через MetaDAO. Передбачає очну участь. Вхід — через перемогу в хакатоні або Eternal.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Залежить від відбіркової події</dd></div>
+            </dl>
+            <a href="https://colosseum.com/accelerator">Переглянути вимоги до вступу <span aria-hidden="true">↗</span><span class="sr-only">: Colosseum Accelerator</span></a>
+          </li>
+          <li class="programme">
+            <h3>Alliance</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>$400 000 при вступі плюс $400 000 додатково на seed-раунді</dd></div>
+              <div><dt>Умови</dt><dd>Оцінка $4M post-money при вступі, на SAFE з токен-листом 1:1.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Звичайний набір закривається 18 листопада 2026</dd></div>
+            </dl>
+            <a href="https://alliance.xyz/apply">Подати заявку <span aria-hidden="true">↗</span><span class="sr-only">: Alliance</span></a>
+          </li>
+          <li class="programme">
+            <h3>Solana Incubator</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>Не опубліковано</dd></div>
+              <div><dt>Умови</dt><dd>Розробка поруч із Solana Labs у Нью-Йорку, з технічною підтримкою, допомогою у залученні коштів і стипендією на переїзд.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Ранні заявки — до 4 грудня 2026</dd></div>
+            </dl>
+            <a href="https://incubator.solanalabs.com/">Подати заявку <span aria-hidden="true">↗</span><span class="sr-only">: Solana Incubator</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung priced" id="rung-5">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 5">05</span>
+          <div><h2>Венчурні раунди</h2><p class="kind">Частка або права на токени</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">$2,25M–$11,25M у наведених раундах</p><p>Користувачі або виручка, які інвестор може перевірити в дата-румі.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Венчурні інвестори Solana</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>Raiku: $2,25M pre-seed, $11,25M seed. Exponent: $5M seed.</dd></div>
+              <div><dt>Умови</dt><dd>Інструменти залежать від угоди; перевіряйте кожне оголошення. Готуйтеся обговорювати і частку, і права на токени.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Спільного дедлайну немає</dd></div>
+            </dl>
+            <a href="https://blog.colosseum.com/expanding-the-arena">Дослідити шлях через Colosseum <span aria-hidden="true">↗</span><span class="sr-only">: Solana venture investors</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="rung governed" id="rung-6">
+        <div class="rung-heading">
+          <span class="rung-number" aria-label="Rung 6">06</span>
+          <div><h2>Ончейн-залучення</h2><p class="kind">Керується ринком</p></div>
+        </div>
+        <div class="rung-proof"><p class="amount">$3M залучено у випадку Umbra</p><p>Живий продукт і спільнота, яка вже хоче токен.</p></div>
+        <ul class="programmes" aria-label="Programmes">
+          <li class="programme">
+            <h3>Запуски MetaDAO</h3>
+            <dl>
+              <div><dt>Сума</dt><dd>Засновник задає мінімум і стелю. Umbra залучила $3M (за сторінкою MetaDAO).</dd></div>
+              <div><dt>Умови</dt><dd>Покупці мають чотири дні, щоб внести USDC. Прийняті кошти потрапляють у скарбницю, якою керує ринок. Витрати засновника і розблокування токенів — за правилами продажу.</dd></div>
+              <div><dt>Дедлайн</dt><dd>Визначає запуск</dd></div>
+            </dl>
+            <a href="https://docs.metadao.fi/how-launches-work/create">Прочитати вимоги до запуску <span aria-hidden="true">↗</span><span class="sr-only">: MetaDAO launches</span></a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <footer>
+      <p>¹ Стандартні гранти, баунті та призи не розмивають частку. Конвертований грант може стати інвестицією, якщо виконано узгоджені умови.</p>
+      <p>Суми й дати — знімок зі статті-джерела. Перед подачею перевіряйте актуальні умови на сторінках програм.</p>
+      <p><a href="data.json">Завантажити дані у форматі JSON</a></p>
+    </footer>
+  </main>
+</body>
+</html>
